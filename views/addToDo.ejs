@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs') %> 
+<body>
+    <%-include('./partials/nav.ejs') %> 
+
+    <div class="content">
+        <form method="POST" action="/todos">
+            <label for="title">Todo Title:</label>
+            <input type="text" id="title" required name="title"/>
+            <label for="task">Todo Task:</label>
+            <input type="text" id="task" required name="task"/>
+            <button type="submit">submit</button>
+        </form>
+    </div>
+</body>
+</html>

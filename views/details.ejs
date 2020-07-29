@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs') %> 
+<body>
+    <%-include('./partials/nav.ejs') %> 
+
+    <div class="content">
+        <h2><%= todo.title%></h2>
+
+        <p><%= todo.task%></p>
+        <a class="delete" data-doc="<%=todo._id%>">delete</a>
+    </div>
+    <script>
+        let trashcan = document.querySelector('a.delete');
+
+        trashcan.addEventListener('click',(e)=>{
+            const endpoint = `/todos/${trashcan.dataset.doc}`;
+
+            fetch(endpoint,{method:'DELETE'})
+            .then((response)=> response.json())
+            .then((data)=> {window.location.href = data.redirect})
+            .catch(console.log)
+        })
+    </script>
+</body>
+</html>

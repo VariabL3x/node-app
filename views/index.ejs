@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs') %> 
+<body>
+    <%-include('./partials/nav.ejs') %> 
+
+    <div class="content">
+        My Do To List
+
+        <% if (todos.length > 0) { %>
+            <% todos.forEach(todo => { %>
+                <a class="single" href="/todos/<%= todo._id%>">
+                    <h3 class="title">Title : <%= todo.title%></h3>
+                    <p class="task">Description : <%= todo.task%></p>
+                </a>
+            <% }) %>
+        <% }  else {%>
+            <p>There are no to do to display...</p>
+        <% } %> 
+    </div>
+</body>
+</html>
