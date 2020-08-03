@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const todoRoutes = require('./routes/todoRoutes')
 //db connect
-const dbUrl = 'mongodb+srv://lucas-todo:darkshadow12@tc-chat.r4lts.mongodb.net/LucasTodo?retryWrites=true&w=majority'
+const dbUrl = ''
 mongoose.connect(dbUrl,{useNewUrlParser:true,useUnifiedTopology:true})
 .then((result)=>{
     console.log('Database Connected')
