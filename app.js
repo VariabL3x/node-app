@@ -3,8 +3,9 @@ const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const todoRoutes = require('./routes/todoRoutes')
+require('dotenv').config();
 //db connect
-const dbUrl = 'mongodb+srv://lucas-todo:darkshadow12@tc-chat.r4lts.mongodb.net/LucasTodo?retryWrites=true&w=majority'
+const dbUrl = process.env.MONGODB_URI
 mongoose.connect(dbUrl,{useNewUrlParser:true,useUnifiedTopology:true})
 .then((result)=>{
     console.log('Database Connected')
